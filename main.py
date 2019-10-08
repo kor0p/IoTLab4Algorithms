@@ -1,6 +1,5 @@
-def wedding(N, people, p):
-    if p:
-        print(N, *people)
+def wedding(N, people):
+    print(N, *people)
     tribes = [set()]
     for first, second in people: # iter inputs
         o = 0                    # and add them to first free tribe
@@ -24,10 +23,10 @@ def wedding(N, people, p):
     # res = sum((boys[i]*(sum(girls)-girls[i]) for i in range(len(tribes))))
     # mathematically is the same, but faster
     return sum(boys)*sum(girls)-sum((b*g for b,g in zip(boys, girls)))
-print('Example 1:'); print(wedding(3, ((1,2), (2,4), (3,5)),1),'\n')
-print('Example 2:'); print(wedding(5, ((1,2), (2,4), (1,3), (3,5), (8,10)),1),'\n')
-print('My example:');print(wedding(4, ((1,2), (2,4), (3,5), (8,10)),1),'\n')
+print('Example 1:'); print(wedding(3, ((1,2), (2,4), (3,5))),'\n')
+print('Example 2:'); print(wedding(5, ((1,2), (2,4), (1,3), (3,5), (8,10))),'\n')
+print('My example:');print(wedding(4, ((1,2), (2,4), (3,5), (8,10))),'\n')
 
 in_N = int(input())
-in_people = [tuple(map(int, input().split(' '))) for _ in range(N)]
+in_people = [tuple(map(int, input().split(' '))) for _ in range(in_N)]
 print(wedding(in_N, in_people))
