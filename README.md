@@ -1,4 +1,4 @@
-# IoTLab3Algorithms
+# IoTLab4Algorithms
 Setup
 --
 `python3 main.py`  
